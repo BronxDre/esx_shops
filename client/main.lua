@@ -32,9 +32,11 @@ function OpenShopMenu(zone)
 			value     = item.name,
 			price     = item.price
 		})
+		
 	end
 
 	ESX.UI.Menu.CloseAll()
+	
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'shop',
 		{
@@ -46,6 +48,7 @@ function OpenShopMenu(zone)
 			TriggerServerEvent('esx_shops:buyItem', data.current.value, data.current.price)
 		end,
 		function(data, menu)
+			
 			menu.close()
 			CurrentAction     = 'shop_menu'
 			CurrentActionMsg  = _U('press_menu')
